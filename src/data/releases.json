@@ -17,6 +17,15 @@
       "youtube": "https://youtube.com/watch?v=pOCuJBvMQak",
       "deezer": "https://www.deezer.com/track/1882605667",
       "tidal": "https://listen.tidal.com/track/244964441"
+    },
+    {
+      "cover": "/images/uploads/falling.jpg",
+      "name": "falling.",
+      "spotify": "https://open.spotify.com/track/60eGSygDB5Z0HRFrcqJiua",
+      "applemusic": "https://music.apple.com/de/album/falling/1600209095?i=1600209306&app=music",
+      "youtube": "https://youtube.com/watch?v=v3ubVEvNsmY",
+      "tidal": "https://listen.tidal.com/track/209107065",
+      "deezer": "https://www.deezer.com/track/1589964462"
     }
   ]
 }
