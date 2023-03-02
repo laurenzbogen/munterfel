@@ -50,6 +50,7 @@ collections: # A list of collections the CMS should be able to edit
           label: releases
           widget: list
           fields:
+            - {name: name, label: Name, widget: string}
             - {name: spotify, label: Spotify, widget: string}
             - {name: applemusic, label: Applemusic, widget: string}
             - {name: deezer, label: Deezer, widget: string}
