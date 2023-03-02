@@ -1,7 +1,13 @@
 ---
-const gigs = ["Hannover", "Leipzig", "Erfurt", "Berlin"]
+
+
+import json from '../gigs.json';
+let gigs = json.gigs;
+gigs.sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+
 ---
 
+
 <ul>
-    {gigs.map((data) => <li>{data}</li>)}
+    {gigs.map((e) => <li>{`${e.venue} | ${e.city} | ${e.date}`}</li>)}
 </ul>
