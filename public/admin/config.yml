@@ -21,6 +21,6 @@ collections: # A list of collections the CMS should be able to edit
   - name: 'gigs'
     label: 'Gigs'
     folder: 'src/gigs'
-    create: true
+    create: false
     fields:
       - {label: "Main", name: "body", widget: 'markdown'}
