@@ -1,28 +1,34 @@
 --- 
+import json from '../data/releases.json';
+
+const {name} = Astro.props;
+const release = json.releases.find(e => e.name == name)
 
 ---
+
+<div>{release ? release.name : null}</div>
 
 <div x-data="{clicked: false, shown:false}" 
 x-intersect.half.margin.-25%.0px="shown = true" x-intersect:leave.half.margin.-25%.0px="shown = false; clicked=false"  
 :class="{'shown': shown, 'clicked': clicked}" class="main_wrapper">
     <div @click="clicked = !clicked; $store.animations.munterfel_farben($el, clicked)" class="square_wrapper">
-        <img class="cover" src="/urlove\ cover.jpeg" alt="urlove cover">
+        <img class="cover" src={`${release?.cover}?nf_resize=fit&w=50`} alt="urlove cover">
 
         <i class="headphones fa-solid fa-headphones-simple"></i>
         <div class="links">
-            <a class="link" href="#">
+            <a class="link" href={release?.deezer}>
                 <i class="fa-brands fa-deezer"></i>
             </a>
-            <a class="link" href="#">
+            <a class="link" href={release?.youtube}>
                 <i class="fa-brands fa-youtube"></i>
             </a>
-            <a class="link" href="#">
+            <a class="link" href={release?.spotify}>
                 <i class="fa-brands fa-spotify"></i>
             </a>
-            <a class="link" href="#">
+            <a class="link" href={release?.applemusic}>
                 <i class="fa-brands fa-itunes"></i>
             </a>
-            <a class="link" href="#">
+            <a class="link" href={release?.tidal}>
                 <i class="fa-brands fa-napster"></i>
             </a>
         </div>
@@ -35,6 +41,7 @@ x-intersect.half.margin.-25%.0px="shown = true" x-intersect:leave.half.margin.-2
     }
 
     .main_wrapper{
+        margin: 50vh 0;
         position: relative;
         height: 18em;
         display: flex;

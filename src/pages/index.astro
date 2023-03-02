@@ -1,12 +1,19 @@
 ---
 // Component Imports
 import Layout from '../components/BaseHead.astro';
-import Single from '../components/Single.astro';
+import Release from '../components/Release.astro';
 import Gigs from '../components/Gigs.astro';
 import "../styles/index.css"
 
+import releases_json from '../data/releases.json';
+const release_names = releases_json.releases.map(e => e.name);
+
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
+
+
+
 ---
 <Layout />
 <script src="../scripts/index.ts"></script>
@@ -18,6 +25,11 @@ import "../styles/index.css"
 				<img id="logo_sw" src="/un_schwarz_weiß.svg" alt="munterfel logo" class="w-36 relative">
 			</div> -->
 			<!-- <Single></Single> -->
+
+			{release_names.map((name) =>(
+				<Release name={name}></Release>
+			))}
+
 			<Gigs></Gigs>
 		</main>
 
