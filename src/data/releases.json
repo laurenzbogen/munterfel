@@ -1,1 +1,22 @@
-{}
+{
+  "releases": [
+    {
+      "name": "lavender.",
+      "spotify": "https://open.spotify.com/track/4KpmnJUHNXI7UzIzU4OoGU",
+      "applemusic": "https://music.apple.com/de/album/lavender/1626818882?i=1626818883&app=music",
+      "youtube": "https://youtube.com/watch?v=QoNL1CmmKOI",
+      "tidal": "https://listen.tidal.com/track/231374869",
+      "deezer": "https://www.deezer.com/track/1771117217",
+      "cover": "/images/uploads/lavender-synth-version-final.jpg"
+    },
+    {
+      "cover": "/images/uploads/v5.jpg",
+      "name": "changeurlife.",
+      "spotify": "https://open.spotify.com/track/7kr08esVcDSBOc8wuiV6WR",
+      "applemusic": "https://music.apple.com/de/album/changeyourlife/1641737273?i=1641737274&app=music",
+      "youtube": "https://youtube.com/watch?v=pOCuJBvMQak",
+      "deezer": "https://www.deezer.com/track/1882605667",
+      "tidal": "https://listen.tidal.com/track/244964441"
+    }
+  ]
+}
