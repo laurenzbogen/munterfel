@@ -1,5 +1,5 @@
 ---
-layout: $/layouts/post.astro
+layout: ../../layouts/post.astro
 title: Test Blog Post
 description: This is A Test Blog Post
 tags:
