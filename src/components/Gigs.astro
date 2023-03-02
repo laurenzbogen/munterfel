@@ -1,7 +1,7 @@
 ---
 
 
-import json from '../gigs.json';
+import json from '../data/gigs.json';
 let gigs = json.gigs;
 gigs.sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
 

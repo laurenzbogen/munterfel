@@ -23,7 +23,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - name: "gigslist"
         label: "Gigs List"
-        file: "src/gigs.json"
+        file: "src/data/gigs.json"
         fields:
           - label: Gigs
             name: gigs
@@ -39,4 +39,11 @@ collections: # A list of collections the CMS should be able to edit
                 time_format: "HH:mm" # e.g. 21:07
                 format: "LLL"
                 picker_utc: false
+  - name: releases
+    label: Releases
+    files:
+      - name: releases
+        label: Releases
+        file: "src/data/releases.json"
+        
 
