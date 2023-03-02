@@ -23,7 +23,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - name: "gigslist"
         label: "Gigs List"
-        file: "../../gigs.json"
+        file: "src/gigs.json"
         fields:
           - label: Gigs
             name: gigs
