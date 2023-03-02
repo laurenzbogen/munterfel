@@ -1,0 +1,178 @@
+--- 
+
+---
+
+<div x-data="{clicked: false, shown:false}" 
+x-intersect.half.margin.-25%.0px="shown = true" x-intersect:leave.half.margin.-25%.0px="shown = false; clicked=false"  
+:class="{'shown': shown, 'clicked': clicked}" class="main_wrapper">
+    <div @click="clicked = !clicked; $store.animations.munterfel_farben($el, clicked)" class="square_wrapper">
+        <img class="cover" src="/urlove\ cover.jpeg" alt="urlove cover">
+
+        <i class="headphones fa-solid fa-headphones-simple"></i>
+        <div class="links">
+            <a class="link" href="#">
+                <i class="fa-brands fa-deezer"></i>
+            </a>
+            <a class="link" href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a class="link" href="#">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a class="link" href="#">
+                <i class="fa-brands fa-itunes"></i>
+            </a>
+            <a class="link" href="#">
+                <i class="fa-brands fa-napster"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    html{
+        --cover-transition-timing: 500ms ease;
+    }
+
+    .main_wrapper{
+        position: relative;
+        height: 18em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        /* background: teal; */
+    }
+
+    .square_wrapper{
+        position: relative;
+        height: 100%;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cover{
+        position: absolute;
+        height: 100%;
+        aspect-ratio: 1;
+        filter: brightness(1);
+        transition: filter var(--cover-transition-timing);
+        pointer-events: none;
+    }
+
+    .headphones{
+        opacity: 0;
+        font-size: 8em;
+        transition: opacity var(--cover-transition-timing), transform var(--cover-transition-timing);
+
+        position: relative;
+    }
+
+    .main_wrapper.shown.clicked .cover{
+        filter: brightness(0.5)
+    }
+
+    .main_wrapper.shown .headphones{
+        opacity: 0.2;
+    }
+
+    .main_wrapper.shown .headphones:hover{
+        opacity: 0.6;
+    }
+
+
+    .main_wrapper.shown.clicked .headphones{
+        transform: scale(0.5) translateY(40px);
+        opacity: 1;
+    }
+
+
+    .links{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    .link{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(calc(-50% + (var(--offset-x) * 250%) * var(--prog)), calc(-50% + (100% + var(--offset-y) * -250%) * var(--prog)));
+        opacity: 0;
+        --prog: 0.7;
+        pointer-events: none;
+        transform-origin: center;
+        transition: all var(--cover-transition-timing);
+    }
+
+    .main_wrapper.shown.clicked .link{
+        pointer-events: auto;
+        opacity: 0.8;
+        --prog: 1;
+    }
+
+    .link:hover, .link:active{
+        opacity: 1;
+        scale: 1.1;
+    }
+
+    .link > *{
+        background: rgba(0, 0, 0, 0.544);
+        font-size: 1em;
+        padding: 0.5em;
+        border-radius: 30%;
+    }
+
+    .link:nth-child(1){
+        --offset-x: -0.866;
+        --offset-y: 0.5;
+    }
+
+    .link:nth-child(2){
+        --offset-x: -0.5;
+        --offset-y: 0.866;
+    }
+
+    .link:nth-child(3){
+        --offset-x: 0;
+        --offset-y: 1;
+    }
+
+    .link:nth-child(4){
+        --offset-x: 0.5;
+        --offset-y: 0.866;
+    }
+
+    .link:nth-child(5){
+        --offset-x: 0.866;
+        --offset-y: 0.5;
+    }
+</style>
+
+<script>
+    const munterfel_animation = [
+        {color: "white"},
+        {color: "var(--yellow)"},
+        {color: "var(--blue)"},
+        {color: "var(--purple)"},  
+        {color: "white"},      
+    ]
+
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('animations', {
+            munterfel_farben(el, clicked){
+                let animation = new Animation(new KeyframeEffect(el, munterfel_animation, {duration: 400, fill:"both"}))
+                if(!clicked){
+                    animation.play()
+                }else{
+                    animation.reverse()
+                }
+
+            }
+        })
+    })
+</script>

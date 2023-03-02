@@ -1,0 +1,21 @@
+body{
+    --purple: rgb(234, 51, 244);
+
+    --pink: #db9fc7;
+    --yellow: rgb(244, 234, 80);
+    --blue: rgb(74, 118, 240);
+}
+
+
+.gradient_animation{
+    --prog: 50%;
+    --color: black;
+    background: linear-gradient(to top left, var(--blue) 0%, var(--color) var(--prog), var(--color) calc(100% - var(--prog)), var(--yellow)  100%)
+    /* background-position-y: 200px;
+    background-repeat: repeat; */
+}
+
+/* @keyframes color_fade {
+    from{background-position-y: 100%}
+    to{background-position-y: 0%}
+} */

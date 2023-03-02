@@ -1,0 +1,28 @@
+---
+// Component Imports
+import Layout from '../components/Layout.astro';
+import Single from '../components/Single.astro';
+import Live from '../components/Live.astro'
+import "../styles/index.css"
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+<Layout />
+<script src="../scripts/index.ts"></script>
+
+		<main>
+			<!-- <div class="flex justify-center items-center min-h-screen">
+				<div class="absolute gradient_animation aspect-square w-full h-full"></div>
+				<img id="logo_cl" src="/un_farbe.svg" alt="munterfel logo" class="w-36 relative">
+				<img id="logo_sw" src="/un_schwarz_weiß.svg" alt="munterfel logo" class="w-36 relative">
+			</div> -->
+			<Single></Single>
+			<Live></Live>
+		</main>
+
+<style>
+	main{
+		min-height: 300vh;
+	}
+</style>
