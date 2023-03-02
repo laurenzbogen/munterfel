@@ -1,3 +1,6 @@
+---
+title: GIGS
+---
 Berlin
 Hamburg
 Erfurt
