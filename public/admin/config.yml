@@ -18,10 +18,26 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-  - name: 'gigs'
-    label: 'Gigs'
-    folder: 'src/gigs'
-    create: false
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - {label: "Main", name: "body", widget: 'markdown'}
+    - name: 'gigs'
+      label: "Gigs"
+      files:
+        - label: "Gigs List"
+          name: "gigs list"
+          file: "../../gigs.json"
+          fields:
+            - {label: Title, name: title, widget: string}
+              label: Gigs
+              name: gigs
+              widget: list
+              fields:
+                - {label: Venue, name: venue, widget: string}
+                - {label: City, name: city, widget: string}
+                - label: "Date"
+                  name: "date"
+                  widget: "datetime"
+                  default: ""
+                  date_format: "DD.MM.YYYY" # e.g. 24.12.2021
+                  time_format: "HH:mm" # e.g. 21:07
+                  format: "LLL"
+                  picker_utc: false
+
