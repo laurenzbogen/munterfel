@@ -1,3 +1,9 @@
 {
-    
+  "gigs": [
+    {
+      "date": "March 11, 2023 12:00 AM",
+      "venue": "test",
+      "city": "test"
+    }
+  ]
 }
