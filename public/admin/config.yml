@@ -21,8 +21,8 @@ collections: # A list of collections the CMS should be able to edit
   - name: 'gigs'
     label: "Gigs"
     files:
-      - label: "About Page"
-        name: "about"
+      - name: "gigslist"
+        label: "Gigs List"
         file: "../../gigs.json"
         fields:
           - {label: Title, name: title, widget: string}
