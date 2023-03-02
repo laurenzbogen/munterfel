@@ -45,5 +45,17 @@ collections: # A list of collections the CMS should be able to edit
       - name: releases
         label: Releases
         file: "src/data/releases.json"
-        
+        fields:
+        - name: releases
+          label: releases
+          widget: list
+          fields:
+            - {name: spotify, label: Spotify, widget: string}
+            - {name: applemusic, label: Applemusic, widget: string}
+            - {name: deezer, label: Deezer, widget: string}
+            - {name: tidal, label: Tidal, widget: string}
+            - {name: youtube, label: Youtube, widget: string}
+            - name: cover
+              label: Cover
+              widget: image
 
