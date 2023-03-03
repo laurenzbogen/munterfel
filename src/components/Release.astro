@@ -13,11 +13,11 @@ const release = json.releases.find(e => e.name == name)
 x-intersect.half.margin.-25%.0px="shown = true" x-intersect:leave.half.margin.-25%.0px="shown = false; clicked=false"  
 :class="{'shown': shown, 'clicked': clicked}" class="main_wrapper">
     <div @click="clicked = !clicked; $store.animations.munterfel_farben($el, clicked)" class="square_wrapper">
-        <img class="cover" alt="urlove cover" src={`${release?.cover}?nf_resize=fit&w=500`}
+        <img class="cover" alt={`${release?.name} cover`} src={`${release?.cover}?nf_resize=fit&w=500`}
         srcset={`${release?.cover}?nf_resize=fit&w=500 500w,
                 ${release?.cover}?nf_resize=fit&w=1000 1000w,
                 ${release?.cover}?nf_resize=fit&w=1500 1500w`}
-                sizes="50vw">
+                sizes="50vw" loading="lazy">
 
         <i class="headphones fa-solid fa-headphones-simple"></i>
         <div class="links">
