@@ -26,6 +26,15 @@
       "youtube": "https://youtube.com/watch?v=v3ubVEvNsmY",
       "tidal": "https://listen.tidal.com/track/209107065",
       "deezer": "https://www.deezer.com/track/1589964462"
+    },
+    {
+      "name": "urlove.",
+      "spotify": "#",
+      "applemusic": "#",
+      "deezer": "#",
+      "tidal": "#",
+      "youtube": "#",
+      "cover": "/images/uploads/logo-central.jpg"
     }
   ]
 }
