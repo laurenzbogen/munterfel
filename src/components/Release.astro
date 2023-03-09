@@ -6,8 +6,6 @@ const release = json.releases.find(e => e.name == name)
 
 ---
 
-<div>{release ? release.name : null}</div>
-
 
 <div x-data="{clicked: false, shown:false}" 
 x-intersect.half.margin.-25%.0px="shown = true" x-intersect:leave.half.margin.-25%.0px="shown = false; clicked=false"  
@@ -46,9 +44,7 @@ x-intersect.half.margin.-25%.0px="shown = true" x-intersect:leave.half.margin.-2
     }
 
     .main_wrapper{
-        margin: 50vh 0;
         position: relative;
-        height: 18em;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -58,7 +54,7 @@ x-intersect.half.margin.-25%.0px="shown = true" x-intersect:leave.half.margin.-2
 
     .square_wrapper{
         position: relative;
-        height: 100%;
+        width: 100%;
         aspect-ratio: 1;
         display: flex;
         justify-content: center;
@@ -170,9 +166,9 @@ x-intersect.half.margin.-25%.0px="shown = true" x-intersect:leave.half.margin.-2
 
     const munterfel_animation = [
         {color: "white"},
-        {color: "var(--yellow)"},
-        {color: "var(--blue)"},
-        {color: "var(--purple)"},  
+        {color: "rgb(var(--yellow))"},
+        {color: "rgb(var(--blue))"},
+        {color: "rgb(var(--purple))"},  
         {color: "white"},      
     ]
 

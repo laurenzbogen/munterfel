@@ -1,13 +1,48 @@
 ---
-
-
 import json from '../data/gigs.json';
+
 let gigs = json.gigs;
-gigs.sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+
+
+let i = 1;
+let f = i++;
+
+function get_formated_date(unformated_date:string):string{
+    let date = new Date(Date.parse(unformated_date))
+    return `${date.toLocaleDateString('en-EN', {year:"numeric", month: "long", day: "numeric"})}`
+    return `${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()%1000}`
+    // ${date.getHours()}:${date.getMinutes()<10 ? "0":""}${date.getMinutes()}
+}
 
 ---
-
-
-<ul>
-    {gigs.map((e) => <li>{`${e.venue} | ${e.city} | ${e.date}`}</li>)}
+ 
+<ul class="text-center mt-96"> 
+    {gigs.map((e) => 
+    <li class="flex flex-col mb-4">
+        <div class="date font-semibold">{get_formated_date(e.date)}</div>
+        <div>{e.venue}</div>
+        <div>{e.city}</div>
+    </li>)}
 </ul>
+
+<style>
+    body{
+        color: white;
+    }
+    .date{
+        animation: shadow_animation 600ms 1s ease-out;
+    }
+
+    @keyframes shadow_animation{
+        0%{
+
+        }
+        50%{
+            text-shadow: 6px 0px rgba(var(--yellow), 0.4), -6px 0px rgba(var(--blue), 1);
+            color: rgba(var(--purple), 0.8)
+        }
+        100{
+
+        }
+    }
+</style>
