@@ -1,0 +1,68 @@
+.main_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+
+main{
+    height: 100vh;
+}
+
+#logo_sw[data-status="1"]{
+    opacity: 0;
+    display: none;
+}
+
+#logo_cl[data-status="1"]{
+    opacity: 1;
+    display: block;
+}
+
+.overlay_wrapper{
+    --background-state: 0%;
+}
+
+.overlay{
+    --color-left: rgb(79, 0, 255);
+    --color-right: rgb(255, 248, 69);
+    background: linear-gradient(315deg, var(--color-left) 0%, var(--color-right) 100%);
+    transition: 150ms ease all
+}
+
+.overlay_left{
+    clip-path: polygon(0 0, 0% var(--background-state), var(--background-state) 0);
+}
+
+.overlay_right{
+    clip-path: polygon(calc(100% - var(--background-state)) 100%, 100% 100%, 100% calc(100% - var(--background-state)));
+}
+
+
+
+<script>
+    const logo = document.querySelector(".logo") as HTMLElement
+
+    function set_logo_state(state:number){
+        let children = logo.children
+        for(let i=0; i<children.length; i++){
+            let el = children[i] as HTMLElement;
+        
+            el.dataset.status = state.toString()
+        }
+    }
+
+    const overlay_wrapper = document.querySelector(".overlay_wrapper") as HTMLElement
+    const reel = document.querySelector(".reel") as HTMLElement
+    function animate(){
+        const duration = 100
+        overlay_wrapper.style.setProperty("--color-left", "white")
+        overlay_wrapper.style.setProperty("--color-right", "white")
+        overlay_wrapper.style.setProperty("--background-state", "100%")
+        setTimeout(()=>{
+            set_logo_state(1)
+            reel.style.display = "block"
+            overlay_wrapper.style.setProperty("--background-state", "0%")
+        }, duration)
+    }
+
+    setTimeout(animate, 1500)
+</script>

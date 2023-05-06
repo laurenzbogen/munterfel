@@ -1,10 +1,15 @@
 ---
 // Component Imports
 import Layout from '../components/BaseHead.astro';
-import Logo from '../components/Logo.astro';
+import Logo from '../components/BandLogo.astro';
+import Post from "../components/Post.astro";
 import Release from '../components/Release.astro';
 import Gigs from '../components/Gigs.astro';
+import BandTitle from '../components/BandTitle.astro';
+import Socials from '../components/Socials.astro'
 import "../styles/index.css"
+
+
 
 import releases_json from '../data/releases.json';
 const release_names = releases_json.releases.map(e => e.name);
@@ -19,99 +24,26 @@ const release_names = releases_json.releases.map(e => e.name);
 
 			<main>
 
-				<Logo class="w-2/4 aspect-square" cl="true"></Logo>
+				<!-- <h3><BandTitle></BandTitle></h3> -->
 
-				<!-- <div class="flex justify-center items-center min-h-screen">
-					<!- - <video src="overtime\ reel.mp4" autoplay muted class="hidden reel h-full w-full object-center object-cover grayscale blur-sm"></video> - ->
-					<div class="overlay_wrapper blur-3xl absolute w-full h-full">
-						<div class="overlay overlay_left w-full h-full absolute"></div>
-						<div class="overlay overlay_right w-full h-full absolute"></div>
-					</div>
+				<!-- <p>munterfel is a band. what the fuck are the talking about.</p>
+				<p>what the fuck are you talking about.</p>
+				<p>there is a thousand reasons that people work out</p>
+				<p>doing it for the male gaze</p> -->
 
-					<div class="logo">
-						<img id="logo_sw" src="/un_schwarz_weiß.svg" alt="munterfel logo" class="w-36 relative opacity-1" data-status="0">
-						<img id="logo_cl" src="/un_farbe.svg" alt="munterfel logo" class="w-36 relative opacity-0 hidden" data-status="0">
-					</div>
-				</div> -->
-
-			
+				<div class="background"></div>
+				<div class="blur"></div>
+				<div class="title">
+					<h1><BandTitle></BandTitle></h1>
+					<Socials></Socials>
+				</div>
 
 
 
-				<!-- <Gigs></Gigs>
 
-				{release_names.map((name) =>(
-					<Release name={name}></Release>
-				))} -->
 
 
 			</main>
-
-
-	<style>
-		main{
-			min-height: 100vh;
-		}
-
-		#logo_sw[data-status="1"]{
-			opacity: 0;
-			display: none;
-		}
-
-		#logo_cl[data-status="1"]{
-			opacity: 1;
-			display: block;
-		}
-
-		.overlay_wrapper{
-			--background-state: 0%;
-		}
-
-		.overlay{
-			--color-left: rgb(79, 0, 255);
-			--color-right: rgb(255, 248, 69);
-			background: linear-gradient(315deg, var(--color-left) 0%, var(--color-right) 100%);
-			transition: 150ms ease all
-		}
-
-		.overlay_left{
-			clip-path: polygon(0 0, 0% var(--background-state), var(--background-state) 0);
-		}
-
-		.overlay_right{
-			clip-path: polygon(calc(100% - var(--background-state)) 100%, 100% 100%, 100% calc(100% - var(--background-state)));
-		}
-	</style>
-
-
-	<script>
-		const logo = document.querySelector(".logo") as HTMLElement
-
-		function set_logo_state(state:number){
-			let children = logo.children
-			for(let i=0; i<children.length; i++){
-				let el = children[i] as HTMLElement;
-			
-				el.dataset.status = state.toString()
-			}
-		}
-
-		const overlay_wrapper = document.querySelector(".overlay_wrapper") as HTMLElement
-		const reel = document.querySelector(".reel") as HTMLElement
-		function animate(){
-			const duration = 100
-			overlay_wrapper.style.setProperty("--color-left", "white")
-			overlay_wrapper.style.setProperty("--color-right", "white")
-			overlay_wrapper.style.setProperty("--background-state", "100%")
-			setTimeout(()=>{
-				set_logo_state(1)
-				reel.style.display = "block"
-				overlay_wrapper.style.setProperty("--background-state", "0%")
-			}, duration)
-		}
-
-		setTimeout(animate, 1500)
-	</script>
 
 
 </Layout>

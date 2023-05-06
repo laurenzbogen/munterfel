@@ -1,0 +1,46 @@
+body{
+    min-height: 100dvh;
+    color: white;
+}
+
+
+.blob_main{
+    position: absolute;
+    height: 20%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    background: rgb(96, 0, 82);
+    filter: blur 500px;
+}
+
+.background{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+    opacity: 0.7;
+    background: radial-gradient(circle at 20% 0%, var(--c-m3), var(--c-m2) 15% 17%, var(--c-m1), var(--c-2) 20%, var(--c-1), var(--c-m3) 140%);
+}
+
+.blur{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -9;
+    background-color: rgba(0, 0, 0, 0.117);
+    backdrop-filter: blur(120px);
+    z-index: 0;
+}
+
+.title{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}

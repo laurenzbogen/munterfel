@@ -3,6 +3,7 @@
 // https://docs.astro.build/core-concepts/astro-components/
 
 export interface Layout {}
+import "../styles/main.css"
 
 ---
 
@@ -13,30 +14,15 @@ export interface Layout {}
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/un_farbe.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Timmana&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/19f211fabc.js" crossorigin="anonymous"></script>
 		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
 
         <title>munterfel.</title>
 
-		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&family=Timmana&display=swap');
 
-			html{
-				--blue: 74, 118, 240;
-				--purple: 234, 51, 244;
-				--yellow: 243, 234, 80;
-
-				/* font-family: 'Timmana', sans-serif; */
-				font-family: 'Sora', sans-serif;
-
-				--background-1: rgb(10, 7, 11);
-				--background-2: rgb(1, 0, 0);
-
-
-				background: linear-gradient(45deg, var(--background-1), var(--background-2))
-			}
-
-		</style>
 	</head>
 
 	<body>

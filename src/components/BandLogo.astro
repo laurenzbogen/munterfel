@@ -1,0 +1,11 @@
+---
+const { class: applyClass, mode } = Astro.props
+const cl = mode === "cl"
+---
+
+<div class={applyClass}>
+
+    {cl ? 
+        <img class="w-full h-full" src="un_farbe.svg" alt="munterfel logo colored"> : 
+        <img class="w-full h-full" src="un_schwarz_weiß.svg" alt="munterfel logo black and white"> }
+</div>
