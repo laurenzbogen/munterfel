@@ -8,4 +8,4 @@ author: Laurenz Bogen
 authorTwitter: laurenzbogen
 date: 2023-03-02T02:31:39.844Z
 ---
-Lorem ipsum dings da bums
+Lorem ipsum dings da bums!
