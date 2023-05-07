@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: dev
 
 media_folder: 'public/images/uploads' # Folder where user uploaded files should go
 public_folder: '/images/uploads'
@@ -59,4 +59,4 @@ collections: # A list of collections the CMS should be able to edit
             - name: cover
               label: Cover
               widget: image
-
+f

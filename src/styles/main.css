@@ -4,7 +4,7 @@
 
 html{
     /* background: black; */
-    background: var(--c-2);
+    background: black;
 
     font-size: clamp(1rem, -2rem + 6.25vw, 2rem);
 
@@ -16,40 +16,49 @@ html{
 
 
     font-family: 'Timmana', sans-serif;
-    /* font-family: 'Lato', sans-serif; */
-    font-weight: 800;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
 
 
     --c-1: rgb(7, 0, 11);
     --c-2: rgb(26, 0, 31);
 }
 
-
+h1, h2, h3, h4, h5, h6, p{
+    display: block;
+}
 
 h1{
     font-size: 4em;
+    margin: 0.5em 0;
 }
 
 h2{
     font-size: 2em;
+    margin: 0.83em 0;
 }
 
 h3{
     font-size: 1.5em;
+    margin: 1em 0;
 }
 
 h4{
     font-size: 1em;
+    margin: 1.33em 0;
 }
 
 h5{
     font-size: .83em;
+    margin: 1.67em 0;
 }
 
 h6{
     font-size: .67em;
+    margin: 2.33em 0;
 }
 
 p{
     font-size: .5em;
+    margin: 1.5em 0;
 }

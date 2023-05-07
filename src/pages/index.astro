@@ -12,6 +12,8 @@ import "../styles/index.css"
 
 
 import releases_json from '../data/releases.json';
+import BandLogo from '../components/BandLogo.astro';
+import Footer from '../components/Footer.astro';
 const release_names = releases_json.releases.map(e => e.name);
 
 
@@ -19,31 +21,8 @@ const release_names = releases_json.releases.map(e => e.name);
 // https://docs.astro.build/core-concepts/astro-components/
 
 ---
-<Layout>
-	<script src="../scripts/index.ts"></script>
-
-			<main>
-
-				<!-- <h3><BandTitle></BandTitle></h3> -->
-
-				<!-- <p>munterfel is a band. what the fuck are the talking about.</p>
-				<p>what the fuck are you talking about.</p>
-				<p>there is a thousand reasons that people work out</p>
-				<p>doing it for the male gaze</p> -->
-
-				<div class="background"></div>
-				<div class="blur"></div>
-				<div class="title">
-					<h1>munterfehlt.</h1>
-					<Socials></Socials>
-				</div>
-
-
-
-
-
-
-			</main>
+<Layout background footer client:load>
+	<script src="../scripts/index.ts" defer></script>
 
 
 </Layout>

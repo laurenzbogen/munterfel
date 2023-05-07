@@ -3,7 +3,11 @@
 // https://docs.astro.build/core-concepts/astro-components/
 
 export interface Layout {}
+import Footer from "../components/Footer.astro"
 import "../styles/main.css"
+
+const {background, footer} = Astro.props
+
 
 ---
 
@@ -26,8 +30,60 @@ import "../styles/main.css"
 	</head>
 
 	<body>
-		<slot />
+		{background && 
+			<div class="background_wrapper">
+				<div class="background"></div>
+				<div class="blur"></div>
+			</div>
+		}
+
+
+		<div class="main_wrapper">
+			<main>
+				<slot/>
+			</main>
+			
+			{footer && <Footer></Footer>}
+
+		</div>
 	</body>
+
+	<style>
+		.main_wrapper{
+			min-height: 100vh;
+			min-height: 100dvh;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.background_wrapper{
+			height: 100%;
+			width: 100%;
+			position: fixed;
+			top: 0;
+		}
+
+		.background{
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			z-index: -10;
+			opacity: 0.7;
+			background: radial-gradient(circle at 20% 0%, var(--c-m3), var(--c-m2) 15% 17%, var(--c-m1), var(--c-2) 20%, var(--c-1), var(--c-m3) 140%);
+		}
+
+		.blur{
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			z-index: -9;
+			background-color: rgba(0, 0, 0, 0.117);
+			backdrop-filter: blur(120px);
+			z-index: 0;
+		}
+	</style>
 </html>
 
 
