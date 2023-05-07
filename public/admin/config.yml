@@ -59,4 +59,3 @@ collections: # A list of collections the CMS should be able to edit
             - name: cover
               label: Cover
               widget: image
-f
